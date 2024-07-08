@@ -10,7 +10,7 @@ PLACEHOLDER = "[name]"
 
 main_letter = "./Input/Letters/starting_letter.txt"
 
-invited_names_file = "./Input/Names/invited_names.txt"
+invited_names_file = "Input/Names/invited_names.txt"
 
 with open(invited_names_file, "r") as names:
     names_list = names.readlines()
