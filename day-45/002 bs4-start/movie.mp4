@@ -1,0 +1,521 @@
+
+    <html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="robots" content="noindex,nofollow,noarchive">
+        <title>Мэр Кингстауна (3 сезон) - 5 серия</title>
+	<style>
+		body {
+			margin: 0;
+			background-color: black !important;
+		}
+
+		#player {
+			width: 100%;
+		}
+
+        #player > .placeholder {
+			color: white;
+        }
+	</style>
+
+<script data-name="mms">
+	!function(){
+		var w=window,k='MediaSource',MS=w[k]||w['WebKit'+k],MMS=w['Managed'+k];
+		if(!MS&&MMS)w[k]=MMS;
+	}();
+</script>
+
+<script data-name="main">
+	var playerBase= "https://cdn.jsdelivr.net/npm/venom-player@0.2.88/dist/", app,tryLoad=1,
+		embedHost= "api.marts.ws",
+		consumerHost= "zombie-film.com-embed", 
+		consumerId= 4 ,
+		ancestorOrigins= location.ancestorOrigins && Array.from ? Array.from(location.ancestorOrigins) : [],
+		id= 695944 , franchiseID= 52006 ;
+	var isEmbedded; try { isEmbedded = self !== top; } catch (e) {isEmbedded = true}
+	var sameOrigin; try { sameOrigin = top.location.origin === location.origin } catch(e) {}
+	if(isEmbedded&&!sameOrigin){
+		__s('cat=frame&hit=sub&host='+location.hostname.split('.')[0].replace(/api\d+/,'api{0}'));
+		addEventListener('message',function(e){if('ping'==e.data)e.source.postMessage('pong',e.origin)});
+	}
+	if (isEmbedded && !sameOrigin && window.fetch && window.URL && !/(greenfilm\.vip|vsetam.net|zetfi?l?i?x(main|24|s)?\.\w{2,4})$/.test(consumerHost||'')) { 
+		
+		var url = new URL(location.href), re = /^api\d+\./;
+		if (re.test(url.hostname)) {
+			url.hostname = url.hostname.replace(re, 'api.');
+			fetch(url.origin+'/ping/',{method:'head'}).then(function (r) {
+				url.searchParams.set('host', new URL(document.referrer).hostname);
+				if(r.status===200)location.href=url.href;
+			})
+		}
+	}
+	var ua = navigator.userAgent
+		.replace(/\sMobile\/\S+/, '')
+		.replace('iPhone; CPU iPhone','iPhone')
+		.replace(' (KHTML, like Gecko)', '')
+		.replace('Mozilla/5.0 (', '')
+		.replace(' like Mac OS X)', '')
+		.replace('Mobile', 'M')
+		.replace('Safari', 'S')
+		.replace(/(OS\s\d+)(_\d+)+/g,'$1')
+		.replace(/(\d+)(\.\d+)+/g,'$1')
+		.replace(/\sAppleWebKit\/\d+/, '');
+	var iPhone = ~ua.indexOf('iPhone') && ua.indexOf('Windows') == -1 ? 'iPhone' : 'other';
+	var notSafari=/(GSA|CriOS|YaBrowser|YaApp_iOS|UCBrowser|Instagram|vkclient|FBSV|MicroMessenger|FxiOS|EdgiOS|RDDocuments|LightSpeed|MessengerLiteForiOS|OPT|MiuiBrowser|YaaniBrowser|AlohaBrowser|Baiduspider)\/?\d*/;
+	setTimeout(function () {
+		__s('cat=frame&hit=embed&sub='+(isEmbedded?'embed':'top')+'&type='+(sameOrigin?'same':'diff')+'&label='+iPhone+'&host='+consumerHost)
+	},1000);
+	setTimeout(function () {
+		__s('cat=frame&hit=embed1m&sub='+(isEmbedded?'embed':'top')+'&type='+(sameOrigin?'same':'diff')+'&label='+iPhone+'&host='+consumerHost)
+	}, 1000 * 60);
+	if (iPhone === 'iPhone') {
+		var nameVer = notSafari.test(ua) ? ua.match(notSafari)[0] : ua.split(' ').slice(-2)[0];
+		nameVer = (nameVer || '').split('/');
+		if(!nameVer[0]||parseInt(nameVer[0])|| ~['iPhone','M','OS',''].indexOf(nameVer[0].replace(/\W/g,''))) {
+			nameVer = [navigator.userAgent];
+		}
+		if(/\W/.test(nameVer[0]||'')) nameVer = [ua.replace(/\s/g,'_').replace(/\W/g,'-')];
+		var major = parseInt(nameVer[1]) || nameVer[1]||'-',
+            ancestorProtocols=ancestorOrigins.map(function(d){return d.match(/(.+):/)[1]});
+		__s('cat=support&hit=swIos&sub='+location.protocol+(navigator.serviceWorker?'sw':'')+
+			'&type='+nameVer[0]+'&label='+major+'&description='+ancestorProtocols);
+	}var unixTime= 1719860521 ;
+	addEventListener('error', function (e, f, l, c) {
+		try {
+			e = e || '';
+			f = f || e.filename || '';
+			l = l || e.lineno;
+			c = c || e.colno;
+			var lc = (l || c) ? l + ':' + c : '',
+				m = (e.message || e).toString().replace(/\n/g, '')
+					.replace('Uncaught SecurityError: Blocked a frame with origin', 'blockFR')
+					.replace('from accessing a cross-origin frame', '')
+					.replace(/https?:\/\/api\d+/, 'api.')
+					.replace("token ')'",'token )' )
+					.replace(/uncaught(?:\sexception)?\s+/i, '');
+			__s('cat=window&hit=error&sub=' + lc + f + '&label=' + m);
+		} catch (e) {
+			__s('cat=window&hit=error&label=WTF_'+e);
+		}
+		var n = document.getElementById('player'), p;
+		if (n && !app) {
+			n.style.border = '1px dashed red';
+			p = document.createElement('p');
+			p.innerText = m;
+			p.style.color = 'red';
+			n.appendChild(p);
+		}
+    });
+	function __s(s){
+		new Image().src = "https://s.myangular.life/player?"+s;
+	}
+
+	function makePlayer(opts) {
+		var s
+		if (!window.VenomPlayer) {
+			if(tryLoad==1){
+				playerBase="https://unpkg.com/venom-player@0.2.88/dist/";
+				s=document.createElement('script');
+				s.src=playerBase+'player.js';
+				s.onload=function(){setTimeout(function(){makePlayer(opts)},1000)};
+				s.onerror=function(){__s('cat=window&hit=error&label=PLAYER_LOAD_FAIL_UNPKG')};
+				document.head.appendChild(s)
+			}
+			throw 'PLAYER_LOAD_FAIL_'+tryLoad++; 
+		}
+		if (VenomPlayer.isMobile) try {
+			localStorage.removeItem('player.volume')
+		} catch (e) {}
+
+		Object.assign(opts, {
+			container: document.getElementById('player'),
+			publicPath: playerBase,
+			ads: adsConfig,
+			defaultPoster:'',
+			speed: [1, 1.1, 1.25, 1.5],
+			restrictSpeed: function(s, q) {return s > 1 && q > 555?'Изменение скорости доступно только на низком качестве видео':''},
+			volume:1,
+			preventExternalSilencing:true,
+			aspectRatio: isEmbedded ? 'fill' : '16:9',
+			mini:320,
+			reportUrl: 'https://apicollaps.cc/bug-report',
+			stats: ['wss://s.myangular.life/ws?ref_id=4'],
+			hlsNativeParam:true,
+			dash: {
+				streaming: {
+					stableBufferTime: 120,
+					bufferTimeAtTopQualityLongForm: 120
+				}
+			},
+			theme: "classic",
+			cssVars:{"color-text":"rgba(255,255,255,1)","border-radius":"0rem","color-buttons":"rgba(255,255,255,1)","color-primary":"rgba(0,217,231,1)","background-color-primary":"rgba(0,0,0,0.6)","button-icon-color":"rgba(255,255,255,1)"},
+			time:  0 ,
+			soundBlock: "delete",
+			autoLandscape:true,
+			preview: {
+				interval: 5,
+				width: 160, height: 90,
+				spriteSize: 100, rowSize: 10,
+				src: 'https://img.zcvh.net/'+  1093822  +'/desktop/thumb-${spriteNum}.webp',
+				firstNum: 1, pad: 1
+			},
+			p2p: Object.assign({
+				testM: true,
+				testMhls: true,
+				packetSize: 16e3,
+				rtc: {
+					peerConnection: {
+						iceServers: [
+							{ urls: "stun:stun.l.google.com:19302" },
+							{
+								urls: "turn:turn.zcvh.net:5349",
+								'username': 'brucewayne',
+								'credential': '12345'
+							}
+						],
+						bundlePolicy: "max-compat"
+					}
+				}
+			},opts.p2p),
+			ui: Object.assign({
+				titleOnlyOnFullscreen:  false ,
+				pip: true,
+				about: false,
+				share:  true 
+			}, opts.ui),
+			translations: {en:{ screen: 'intro', repeat: 'repeat', titer: 'titer',
+					pipIn: 'Picture in Picture', pipOut: 'expand' }},
+			text: Object.assign({
+				ads: 'рекламу', screen: 'интро', repeat: 'повтор', titer: 'титры',
+				blocked:'Видео заблокировано по просьбе правообладателя'
+			},opts.text)
+		});
+		var safariVersion;
+		if (
+			location.pathname.startsWith('/embed/')
+			&& /^https:\/\/(api[a-z\-]*|mm)\./.test(location.href)
+			&& location.href.indexOf('sw=no') < 0
+		) {
+			
+			var swc=navigator.serviceWorker;
+			if(swc)setTimeout(function (){ 
+				if(swc.controller)swc.ready.then(function(r){r.unregister()})
+			},0);
+			if(!navigator.serviceWorker && iPhone==='iPhone') {
+				if(ancestorOrigins.some(function (e){return e.startsWith('http:')})){
+					opts.restrictQuality = function (q) {if(+q>480)
+						return 'Изменение качества доступно только на безопасных страницах (https)'
+					};
+				} else if(notSafari.test(ua)) {
+					opts.restrictQuality = function (q) {if(+q>480)return 'Изменение качества доступно только в Safari'};
+				} else {
+					safariVersion = ua.match(/Version\/(\d+)/);
+					if(safariVersion&& +safariVersion[1] > 10) {
+						opts.restrictQuality = function (q) {
+							if(navigator.serviceWorker)return;
+							return parseInt(q) > 480 && 'Изменение качества доступно только в Safari<br>Меню =&gt; Открыть в Safari';
+						};
+					}
+				}
+			}
+		}
+		addEventListener('message', function (e) {
+			if(!opts.playlist)return;
+			if(e.data=='playlist hook'){
+				opts.playlist.autoPlay=false;e.source.postMessage('playlist hooked','*');
+			} else if(e.data=='playlist hooked play'&& opts.playlist.autoPlay===false) {
+				app.play()
+			}
+		});
+		app= VenomPlayer.make(opts);
+		if (window.listen) {
+			app.onRenew = listen;
+			listen(app);
+		}
+	}
+
+    (function(){
+	try{
+	var w=window,MMS=w.ManagedMediaSource,MS=w.MediaSource||w.WebKitMediaSource||MMS,
+		opus=(MMS&&MMS==MS?'MMS_':'MS_')+(
+			MS&&MS.isTypeSupported&&MS.isTypeSupported('audio/webm; codecs="opus"')),
+		PC= w.RTCPeerConnection ||w.mozRTCPeerConnection ||w.webkitRTCPeerConnection,
+		dc=w.WebSocket&&PC&&PC.prototype&&PC.prototype.createDataChannel ? 'dc' : '',
+		wasm= w.WebAssembly ? 'wasm ' : '';
+	support('u8',w.Uint8Array);
+	support('weak-ref',w.WeakRef);
+	support('find',Array.prototype.find);
+	__s('cat=support&hit=opus&description='+opus);
+	__s('cat=support&hit=wasm&description='+(wasm+dc || '-'));
+	}catch(e){ }
+
+	var supportsAsync;
+	try{new Function('async ()=>1');supportsAsync=1}catch(e){}
+	support('async',supportsAsync);
+
+	function support(name,v){__s('cat=support&hit='+name+'&description='+(v?'yes':'-'))}
+	})();var loadStart = new Date, loadCdn, isPlayerTimeout, playerTimeout = setTimeout(function(){
+		isPlayerTimeout = true;
+		__s('cat=script&hit=err&sub=timeout5s&ref_id=4');
+	},5000);
+	function scriptStat(name, ev, t) {
+		if (name == 'cdn') {
+			loadCdn = new Date - loadStart;
+			t = loadCdn;
+		} else {
+			t = new Date - loadStart - loadCdn;
+		}
+		__s('cat=script&hit=' + ev + '&sub=' + name + '&time=' + t + '&ref_id=4');
+	}
+</script>
+<script src="https://api.marts.ws/cdn.js" crossorigin="anonymous"
+		onload="scriptStat('cdn','ok')" onerror="scriptStat('cdn','err')"></script>
+<script src="https://cdn.jsdelivr.net/npm/venom-player@0.2.88/dist/player.js" crossorigin="anonymous"
+		onload="scriptStat('player','ok')" onerror="scriptStat('player','err')"></script>
+<script>
+	clearTimeout(playerTimeout);
+	if(!isPlayerTimeout)__s('cat=script&hit=ok&sub=timeout5s&ref_id=4');
+</script>
+<script src="https://api.marts.ws/js/listen-player.js" async crossorigin="anonymous"></script>
+
+    <script data-name="ping">
+		!function () {
+			if (!window.fetch) return;
+
+			var interval = 5 * 60 * 1000,
+				timers = {};
+
+			
+
+			setTimeout(function ping() {
+				if (window.VenomPlayer) {
+					setTimeout(ping, interval);
+					pingHost("marts.ws");
+				}
+			}, interval);
+
+			function pingHost(host, url) {
+				if (!host) return;
+				var r = send.bind(null, host);
+				if (!url) url = 'https://api.' + host + '/ping/';
+				fetch(url).then(r).catch(r);
+				timers[host] = Date.now();
+			}
+
+			function send(host, r) {
+				VenomPlayer.stats({
+					hit: 'ping',
+					host: host,
+					value: +(r && r.ok),
+					time: Date.now() - timers[host]
+				});
+			}
+		}();
+
+		setTimeout(function () {
+			window.VenomPlayer &&
+			VenomPlayer.stats({ hit: 'ts', time: Date.now() / 1000 | 0 });
+		}, 6e4);
+
+		
+		if (Math.random() < 0.01 && window.fetch) setTimeout(function () {
+			fetch('https://api.getsdk.online/check').then(function (r) {
+				return r.json()
+			}).then(function (r) {
+				fetch(r.url).catch(function () {
+					return new Promise(function (_, rej) {
+						setTimeout(rej, 1e4)
+					});
+				}).catch(function () {
+					return fetch(r.url)
+				}).catch(function () {
+					new Image().src = 'https://api.getsdk.online/error?id=' + r.id;
+				});
+			}).catch(function () {
+			});
+		}, 6e4);
+    </script>
+
+
+    <script data-name="ss">
+		var settingsOrigin = 'https://api.stiven-king.com',
+			settingsFrame = document.createElement('iframe'),
+			totalTimeKey = 'player.totalTime';
+		settingsFrame.src = settingsOrigin + '/storage.html';
+		settingsFrame.style.width = 0;
+		settingsFrame.style.height = 0;
+		settingsFrame.style.border = 0;
+		addEventListener('DOMContentLoaded', function () {
+			document.body.appendChild(settingsFrame);
+		});
+		addEventListener('message', function (e) {
+			if (e.origin === settingsOrigin && e.data && e.data.key === totalTimeKey) try {
+				var remote = +e.data.value,
+					local = +localStorage.getItem(totalTimeKey) || 0;
+				if (remote > local) {
+					localStorage.setItem(totalTimeKey, remote);
+				} else if (local > remote) {
+					settingsFrame.contentWindow.postMessage({
+						'localStorage.setItem': totalTimeKey,
+						value: local
+					}, settingsOrigin);
+				}
+			} catch (e) {
+			}
+		});
+
+		try {
+			var lastTotalTimeSync = 0,
+				setItem = localStorage.setItem;
+			localStorage.setItem = function (key, value) {
+				setItem.call(localStorage, key, value);
+				var now = Date.now();
+				if (key === totalTimeKey && now - lastTotalTimeSync > 60 * 1000) {
+					lastTotalTimeSync = now;
+					settingsFrame.contentWindow.postMessage({
+						'localStorage.setItem': totalTimeKey,
+						value: value
+					}, settingsOrigin);
+				}
+			};
+		} catch (e) {
+		}
+    </script>
+
+
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" class="next-head">
+    </head>
+    <body>
+	<div id="MiuiBrowser" style="display: none; background-color: yellow; padding: 0.5em">
+		На MiuiBrowser жалуются: видео часто само становится на паузу. Для комфортного просмотра лучше использовать
+		<a href="https://play.google.com/store/apps/details?id=com.android.chrome" target="_blank">Google Chrome</a>
+		&nbsp;<button>ok</button>
+	</div>
+	<script data-name="miui">
+		if (/MiuiBrowser\/13\.[3-8]\./.test(navigator.userAgent)) {
+			var miui = document.getElementById('MiuiBrowser');
+			miui.style.display = 'block';
+			miui.querySelector('button').onclick = function () {miui.remove()}
+		}
+	</script>
+<div id="player">
+        <span class="placeholder">loading...</span>
+    </div>
+
+<script data-name="ad">
+    var middleCount = 0,
+	    adTimeouts = { loading: 20000, starting: 20000, toNextImp: 5000, global: 120000 },
+        adsConfig = {
+	    nonLinear: {
+		    fallbackOnly: false,
+		    url: "https://usesentry.com/load-xml/?id=7875&type=nonlinear&dcc=1",
+		    total:  0 ,
+		    offset:  300 ,
+		    label: { name: 'label', val: 'overlay', counter: true }
+	    },
+    
+        pre: {
+	        vast: { timeouts: adTimeouts, sequential: true },
+            maxImpressions:  2 ,
+	        urls: ["https://usesentry.com/load-xml/?id=5241&roll=pre&dcc=1&maximp=2"]
+
+        },
+    
+        middle: {
+	        offset: 10 * 60,
+	        vast: {
+                sequential: true, 
+				timeouts: {loading: 60000, starting: 60000, global: 120000}
+            },
+	        nonLinearFallback: true,
+            pop: true,
+            total:  0 ,
+            maxImpressions: 1,
+            urls: ["https://usesentry.com/load-xml/?id=21515&maximp=1&dcc=1&mid=6","https://usesentry.com/load-xml/?id=5242&maximp=1&dcc=1&mid=6"]
+,
+	        getUrls: function () {
+		        var u = middleCount && adsConfig.middle.urls
+			        ? adsConfig.middle.urls.slice(1)
+			        : adsConfig.middle.urls;
+		        middleCount++;
+		        return u;
+	        },
+            label: { name: 'roll', val: 'mid', counter: true }
+        },
+    
+        post: {
+	        vast: {
+		        sequential: true,
+		        timeouts: { loading: 9000, starting: 6000, global: 55000 }
+	        },
+	        exitFullscreenVideo: true,
+			skipCD: true,
+            maxImpressions: 1,
+            urls: ["https://usesentry.com/load-xml/?id=54851&roll=post&maximp=1&dcc=1"]
+
+        },
+    
+        confirmTimeout: 60 * 1000, 
+        confirmOn: ['localhost'],
+        vast: { timeouts: adTimeouts },
+	    toLongSkip: 50,
+        volume: 0.3,
+        tv: true,
+        midThenNonLinear:  true 
+    };
+</script>
+
+    <script data-name="mk">
+		makePlayer({
+			poster: "https://img.imgilall.me/movies/video/6/9/5/9/4/4/0/0/0/0/800x450_695944.jpg?t=1719753313",
+			ui: { prevNext:  true  },
+			playlist: {
+				open: true ,
+				ignoreLast: true ,
+                
+				autoNext: true ,
+				id: 52006 ,
+				current: {
+					season:  3 ,
+					episode: "5"
+				},
+				seasons:[{"season":3,"blocked":false,"episodes":[{"episode":"1","id":691850,"videoKey":1089234,"dash":"https://hye1eaipby4w.deliveryv.ws/06_24/10/18/2DKRL4UF/1089234.mpd","hls":"https://hye1eaipby4w.deliveryv.ws/06_10_24/06/10/12/3FMAV52U/CNWZMNAQ.mp4/master.m3u8","audio":{"names":["HDRezka Studio","HDrezka Studio (18+)","LostFilm","TVShows","Eng.Original"],"order":[0,1,2,3,4]},"cc":[{"url":"https://hye1eaipby4w.deliveryv.ws/06_10_24/06/10/12/RZWEMWSD/QIYUR6QE.vtt","name":"Eng. SDH - 1"},{"url":"https://hye1eaipby4w.deliveryv.ws/06_10_24/06/10/12/E25WH2H6/VUEW64KO.vtt","name":"Eng. full - 2"},{"url":"https://hye1eaipby4w.deliveryv.ws/06_10_24/06/10/12/LGWN6EXY/6OYNJ236.vtt","name":"Рус. полные - 3"}],"duration":3262,"title":"Мэр Кингстауна (3 сезон) - 1 серия","qbw":{"1280":720,"1920":1080,"864":480},"download":"","sections":[],"poster":"https://img.imgilall.me/movies/video/6/9/1/8/5/0/0/0/0/0/800x450_691850.jpg?t=1718034435","preview":{"src":"https://img.zcvh.net/1089234/desktop/thumb-${spriteNum}.webp"}},{"episode":"2","id":692224,"videoKey":1089676,"dash":"https://hye1eaipby4w.deliveryv.ws/06_24/12/04/TGAGV7SX/1089676.mpd","hls":"https://hye1eaipby4w.deliveryv.ws/06_11_24/06/11/23/VIHITROU/TEB2UH2L.mp4/master.m3u8","audio":{"names":["HDRezka Studio","HDrezka Studio (18+)","LostFilm","TVShows","Eng.Original"],"order":[0,1,2,3,4]},"cc":[{"url":"https://hye1eaipby4w.deliveryv.ws/06_11_24/06/11/22/WKVAJVZU/JU4FDCOW.vtt","name":"Eng. SDH - 1"},{"url":"https://hye1eaipby4w.deliveryv.ws/06_11_24/06/11/22/YV7MKGNT/GFKG4P22.vtt","name":"Eng. full - 2"},{"url":"https://hye1eaipby4w.deliveryv.ws/06_11_24/06/11/22/3PTUEHUO/VUIVUC7U.vtt","name":"Рус. полные - 3"}],"duration":2557,"title":"Мэр Кингстауна (3 сезон) - 2 серия","qbw":{"1280":720,"1920":1080,"864":480},"download":"","sections":[],"poster":"https://img.imgilall.me/movies/video/6/9/2/2/2/4/0/0/0/0/800x450_692224.jpg?t=1718157639","preview":{"src":"https://img.zcvh.net/1089676/desktop/thumb-${spriteNum}.webp"}},{"episode":"3","id":693837,"videoKey":1091490,"dash":"https://hye1eaipby4w.deliveryv.ws/06_24/20/05/QKLURSBT/1091490.mpd","hls":"https://hye1eaipby4w.deliveryv.ws/06_20_24/06/20/01/MUNRSDYW/KY7D3AI2.mp4/master.m3u8","audio":{"names":["HDRezka Studio","HDrezka Studio (18+)","LostFilm","TVShows","Eng.Original"],"order":[0,1,2,3,4]},"cc":[{"url":"https://hye1eaipby4w.deliveryv.ws/06_19_24/06/19/23/35KEZ3NM/RDKJJVYE.vtt","name":"Eng. SDH - 1"},{"url":"https://hye1eaipby4w.deliveryv.ws/06_19_24/06/19/23/5FBD7TUB/BSMDUKFF.vtt","name":"Eng. full - 2"}],"duration":2416,"title":"Мэр Кингстауна (3 сезон) - 3 серия","qbw":{"1280":720,"1920":1080,"864":480},"download":"","sections":[],"poster":"https://img.imgilall.me/movies/video/6/9/3/8/3/7/0/0/0/0/800x450_693837.jpg?t=1718850445","preview":{"src":"https://img.zcvh.net/1091490/desktop/thumb-${spriteNum}.webp"}},{"episode":"4","id":695481,"videoKey":1093330,"dash":"https://hye1eaipby4w.deliveryv.ws/06_24/26/20/XT2U2H23/1093330.mpd","hls":"https://hye1eaipby4w.deliveryv.ws/06_26_24/06/26/11/RX2O7IUV/WN46AVWC.mp4/master.m3u8","audio":{"names":["HDRezka Studio","HDrezka Studio (18+)","LostFilm","TVShows","Eng.Original"],"order":[0,1,2,3,4]},"cc":[{"url":"https://hye1eaipby4w.deliveryv.ws/06_26_24/06/26/11/OKE57J6Q/FQXXSNBH.vtt","name":"Eng. SDH - 1"},{"url":"https://hye1eaipby4w.deliveryv.ws/06_26_24/06/26/11/5DHD6QFE/DH5WSZGW.vtt","name":"Eng. full - 2"},{"url":"https://hye1eaipby4w.deliveryv.ws/06_26_24/06/26/11/44KALCCQ/QGZNP5GP.vtt","name":"Рус. полные - 3"}],"duration":2431,"title":"Мэр Кингстауна (3 сезон) - 4 серия","qbw":{"1280":720,"1920":1080,"864":480},"download":"","sections":[],"poster":"https://img.imgilall.me/movies/video/6/9/5/4/8/1/0/0/0/0/800x450_695481.jpg?t=1719421808","preview":{"src":"https://img.zcvh.net/1093330/desktop/thumb-${spriteNum}.webp"}},{"episode":"5","id":695944,"videoKey":1093822,"dash":"https://hye1eaipby4w.deliveryv.ws/06_24/30/16/PFSEEUQ5/1093822.mpd","hls":"https://hye1eaipby4w.deliveryv.ws/06_30_24/06/30/14/FYID47SQ/2EDOTLGC.mp4/master.m3u8","audio":{"names":["Cold Film"],"order":[0]},"duration":2908,"title":"Мэр Кингстауна (3 сезон) - 5 серия","download":"","sections":[],"poster":"https://img.imgilall.me/movies/video/6/9/5/9/4/4/0/0/0/0/800x450_695944.jpg?t=1719753313","preview":{"src":"https://img.zcvh.net/1093822/desktop/thumb-${spriteNum}.webp"}}]},{"season":2,"blocked":false,"episodes":[{"episode":"1","id":568742,"videoKey":952276,"dash":"https://hye1eaipby4w.deliveryv.ws/03_23/02/05/OJDMNBNA/952276.mpd","hls":"https://hye1eaipby4w.deliveryv.ws/03_02_23/03/02/00/NYRIZOE6/N2TXM6VL.mp4/master.m3u8","audio":{"names":["LostFilm","HDRezka Studio","HDrezka Studio (18+)","TVShows","Eng.Original","DniproFilm (укр)"],"order":[0,1,2,3,5,4]},"cc":[{"url":"https://hye1eaipby4w.deliveryv.ws/03_01_23/03/01/23/N3Z4OC3U/M5GY72S6.vtt","name":"Eng. SDH - 1"},{"url":"https://hye1eaipby4w.deliveryv.ws/03_01_23/03/01/23/BUBB746V/5MOB2QIS.vtt","name":"Eng. full - 2"},{"url":"https://hye1eaipby4w.deliveryv.ws/03_01_23/03/01/23/4RNB22MS/3LUQHPC3.vtt","name":"Рус. полные - 3"},{"url":"https://hye1eaipby4w.deliveryv.ws/03_01_23/03/01/23/DSNMP65I/L6M2XVN5.vtt","name":"Рус. форсированные - 4"}],"duration":3149,"title":"Мэр Кингстауна (2 сезон) - 1 серия","qbw":{"1280":720,"1920":1080,"864":480},"download":"","sections":[],"poster":"https://img.imgilall.me/movies/video/5/6/8/7/4/2/0/0/0/0/800x450_568742.jpg?t=1677767020","preview":{"src":"https://img.zcvh.net/952276/desktop/thumb-${spriteNum}.webp"}},{"episode":"2","id":568877,"videoKey":952441,"dash":"https://hye1eaipby4w.deliveryv.ws/03_23/02/18/YRBQSWOK/952441.mpd","hls":"https://hye1eaipby4w.deliveryv.ws/03_02_23/03/02/13/Y4YLEMQB/LBAOL3UO.mp4/master.m3u8","audio":{"names":["LostFilm","HDRezka Studio","HDrezka Studio (18+)","TVShows","Eng.Original","DniproFilm (укр)"],"order":[0,1,2,3,5,4]},"cc":[{"url":"https://hye1eaipby4w.deliveryv.ws/03_02_23/03/02/12/UWTD4OSS/GEC2C6QH.vtt","name":"Eng. SDH - 1"},{"url":"https://hye1eaipby4w.deliveryv.ws/03_02_23/03/02/12/74CE7M7L/ZZDKKQ43.vtt","name":"Eng. full - 2"},{"url":"https://hye1eaipby4w.deliveryv.ws/03_02_23/03/02/12/SJ2J5AAF/BDKFEJM2.vtt","name":"Рус. полные - 3"},{"url":"https://hye1eaipby4w.deliveryv.ws/03_02_23/03/02/12/6PLAWG2B/5FJAW7VD.vtt","name":"Рус. форсированные - 4"}],"duration":2776,"title":"Мэр Кингстауна (2 сезон) - 2 серия","qbw":{"1280":720,"1920":1080,"864":480},"download":"","sections":[],"poster":"https://img.imgilall.me/movies/video/5/6/8/8/7/7/0/0/0/0/800x450_568877.jpg?t=1677775521","preview":{"src":"https://img.zcvh.net/952441/desktop/thumb-${spriteNum}.webp"}},{"episode":"3","id":568887,"videoKey":952452,"dash":"https://hye1eaipby4w.deliveryv.ws/03_23/02/18/MW7FVJHZ/952452.mpd","hls":"https://hye1eaipby4w.deliveryv.ws/03_02_23/03/02/15/ZGIWG5C7/QM7NJWPJ.mp4/master.m3u8","audio":{"names":["LostFilm","HDRezka Studio","HDrezka Studio (18+)","TVShows","Eng.Original","DniproFilm (укр)"],"order":[0,1,2,3,5,4]},"cc":[{"url":"https://hye1eaipby4w.deliveryv.ws/03_02_23/03/02/14/OPHOORC4/F5TISEGI.vtt","name":"Eng. SDH - 1"},{"url":"https://hye1eaipby4w.deliveryv.ws/03_02_23/03/02/14/DGL42CEG/CYIEQD36.vtt","name":"Eng. full - 2"},{"url":"https://hye1eaipby4w.deliveryv.ws/03_02_23/03/02/14/AS52DY7Q/VDYHB37W.vtt","name":"Рус. полные - 3"},{"url":"https://hye1eaipby4w.deliveryv.ws/03_02_23/03/02/14/K4R6IPEI/P2MJEZ3C.vtt","name":"Рус. форсированные - 4"}],"duration":2221,"title":"Мэр Кингстауна (2 сезон) - 3 серия","qbw":{"1280":720,"1920":1080,"864":480},"download":"","sections":[],"poster":"https://img.imgilall.me/movies/video/5/6/8/8/8/7/0/0/0/0/800x450_568887.jpg?t=1677775413","preview":{"src":"https://img.zcvh.net/952452/desktop/thumb-${spriteNum}.webp"}},{"episode":"4","id":568918,"videoKey":952454,"dash":"https://hye1eaipby4w.deliveryv.ws/03_23/02/22/MZ2MUW5M/952454.mpd","hls":"https://hye1eaipby4w.deliveryv.ws/03_02_23/03/02/15/F7BOYO2T/E275IEZD.mp4/master.m3u8","audio":{"names":["LostFilm","HDRezka Studio","HDrezka Studio (18+)","TVShows","Eng.Original","DniproFilm (укр)"],"order":[0,1,2,3,5,4]},"cc":[{"url":"https://hye1eaipby4w.deliveryv.ws/03_02_23/03/02/15/2LE3EA6V/G6PRH3ML.vtt","name":"Eng. SDH - 1"},{"url":"https://hye1eaipby4w.deliveryv.ws/03_02_23/03/02/15/XWAFHEYC/G4XD4I7L.vtt","name":"Eng. full - 2"},{"url":"https://hye1eaipby4w.deliveryv.ws/03_02_23/03/02/15/I6JUX5S7/I6FQAXM3.vtt","name":"Рус. полные - 3"},{"url":"https://hye1eaipby4w.deliveryv.ws/03_02_23/03/02/15/GR36ZRD7/APWZITQ6.vtt","name":"Рус. форсированные - 4"}],"duration":2345,"title":"Мэр Кингстауна (2 сезон) - 4 серия","qbw":{"1280":720,"1920":1080,"864":480},"download":"","sections":[],"poster":"https://img.imgilall.me/movies/video/5/6/8/9/1/8/0/0/0/0/800x450_568918.jpg?t=1677789756","preview":{"src":"https://img.zcvh.net/952454/desktop/thumb-${spriteNum}.webp"}},{"episode":"5","id":568925,"videoKey":952468,"dash":"https://hye1eaipby4w.deliveryv.ws/03_23/02/19/Z6HFFRC7/952468.mpd","hls":"https://hye1eaipby4w.deliveryv.ws/03_02_23/03/02/16/GVH44M3L/CDW2Y66E.mp4/master.m3u8","audio":{"names":["LostFilm","HDRezka Studio","HDrezka Studio (18+)","TVShows","Eng.Original","DniproFilm (укр)"],"order":[0,1,2,3,5,4]},"cc":[{"url":"https://hye1eaipby4w.deliveryv.ws/03_02_23/03/02/15/EN5PEKTO/Z4H5TAMA.vtt","name":"Eng. SDH - 1"},{"url":"https://hye1eaipby4w.deliveryv.ws/03_02_23/03/02/15/AKA4WWTT/IHQ57YVN.vtt","name":"Eng. full - 2"},{"url":"https://hye1eaipby4w.deliveryv.ws/03_02_23/03/02/15/56YV5J7F/3XR2YHYF.vtt","name":"Рус. полные - 3"},{"url":"https://hye1eaipby4w.deliveryv.ws/03_02_23/03/02/15/BLA6QULK/Q7SJ7LRB.vtt","name":"Рус. форсированные - 4"}],"duration":2352,"title":"Мэр Кингстауна (2 сезон) - 5 серия","qbw":{"1280":720,"1920":1080,"864":480},"download":"","sections":[],"poster":"https://img.imgilall.me/movies/video/5/6/8/9/2/5/0/0/0/0/800x450_568925.jpg?t=1677778534","preview":{"src":"https://img.zcvh.net/952468/desktop/thumb-${spriteNum}.webp"}},{"episode":"6","id":568932,"videoKey":952499,"dash":"https://hye1eaipby4w.deliveryv.ws/03_23/02/21/Y27HGCWT/952499.mpd","hls":"https://hye1eaipby4w.deliveryv.ws/03_02_23/03/02/18/G65YCI6G/UP2UMQEA.mp4/master.m3u8","audio":{"names":["LostFilm","HDRezka Studio","HDrezka Studio (18+)","TVShows","Eng.Original","DniproFilm (укр)"],"order":[0,1,2,3,5,4]},"cc":[{"url":"https://hye1eaipby4w.deliveryv.ws/03_02_23/03/02/16/WTBSBA5E/WC2TXC5T.vtt","name":"Eng. full - 1"},{"url":"https://hye1eaipby4w.deliveryv.ws/03_02_23/03/02/16/RFAIDAK5/TL4GK2EE.vtt","name":"Eng. full - 2"},{"url":"https://hye1eaipby4w.deliveryv.ws/03_02_23/03/02/16/2CCNUDNG/7QTTGDXZ.vtt","name":"Рус. полные - 3"},{"url":"https://hye1eaipby4w.deliveryv.ws/03_02_23/03/02/16/7GX7OJFY/DST7FZVL.vtt","name":"Рус. форсированные - 4"}],"duration":2257,"title":"Мэр Кингстауна (2 сезон) - 6 серия","qbw":{"1280":720,"1920":1080,"864":480},"download":"","sections":[],"poster":"https://img.imgilall.me/movies/video/5/6/8/9/3/2/0/0/0/0/800x450_568932.jpg?t=1677785615","preview":{"src":"https://img.zcvh.net/952499/desktop/thumb-${spriteNum}.webp"}},{"episode":"7","id":568574,"videoKey":952101,"dash":"https://hye1eaipby4w.deliveryv.ws/03_23/01/16/MFOTUS4N/952101.mpd","hls":"https://hye1eaipby4w.deliveryv.ws/03_01_23/03/01/12/KAKNAUTU/GB6NP62P.mp4/master.m3u8","audio":{"names":["LostFilm","HDRezka Studio","HDrezka Studio (18+)","Eng.Original","DniproFilm (укр)"],"order":[0,1,2,4,3]},"cc":[{"url":"https://hye1eaipby4w.deliveryv.ws/03_01_23/03/01/11/WE5F5UOT/XBD54PVW.vtt","name":"Eng. SDH - 1"},{"url":"https://hye1eaipby4w.deliveryv.ws/03_01_23/03/01/11/5XGCLDMV/QZ3DKMDU.vtt","name":"Eng. full - 2"},{"url":"https://hye1eaipby4w.deliveryv.ws/03_01_23/03/01/11/NCRV2CE2/J4COYTAH.vtt","name":"Рус. полные - 3"},{"url":"https://hye1eaipby4w.deliveryv.ws/03_01_23/03/01/11/EG65XFPX/BQDZBNCL.vtt","name":"Рус. форсированные - 4"}],"duration":2036,"title":"Мэр Кингстауна (2 сезон) - 7 серия","qbw":{"1280":720,"1920":1080,"864":480},"download":"","sections":[],"poster":"https://img.imgilall.me/movies/video/5/6/8/5/7/4/0/0/0/0/800x450_568574.jpg?t=1677767020","preview":{"src":"https://img.zcvh.net/952101/desktop/thumb-${spriteNum}.webp"}},{"episode":"8","id":570271,"videoKey":953929,"dash":"https://hye1eaipby4w.deliveryv.ws/03_23/09/12/YVNSIH44/953929.mpd","hls":"https://hye1eaipby4w.deliveryv.ws/03_09_23/03/09/08/QRFCKHSX/VFPFYTJE.mp4/master.m3u8","audio":{"names":["LostFilm","HDRezka Studio","HDrezka Studio (18+)","TVShows","Eng.Original","DniproFilm (укр)","delete"],"order":[0,1,2,3,5,4,6]},"cc":[{"url":"https://hye1eaipby4w.deliveryv.ws/03_09_23/03/09/07/DDW7PIQI/ZP5QOFL2.vtt","name":"Eng. full - 1"},{"url":"https://hye1eaipby4w.deliveryv.ws/03_09_23/03/09/07/RGRNADYR/CQHFGERX.vtt","name":"Eng. full - 2"},{"url":"https://hye1eaipby4w.deliveryv.ws/03_09_23/03/09/07/JIMH6QRJ/D5TPKVC3.vtt","name":"Рус. полные - 3"},{"url":"https://hye1eaipby4w.deliveryv.ws/03_09_23/03/09/07/YFWQE2EG/JVFJPEVI.vtt","name":"Рус. форсированные - 4"}],"duration":2818,"title":"Мэр Кингстауна (2 сезон) - 8 серия","qbw":{"1280":720,"1920":1080,"864":480},"download":"","sections":[],"poster":"https://img.imgilall.me/movies/video/5/7/0/2/7/1/0/0/0/0/800x450_570271.jpg?t=1678358170","preview":{"src":"https://img.zcvh.net/953929/desktop/thumb-${spriteNum}.webp"}},{"episode":"9","id":571871,"videoKey":955700,"dash":"https://hye1eaipby4w.deliveryv.ws/03_23/16/09/QA3UTP4X/955700.mpd","hls":"https://hye1eaipby4w.deliveryv.ws/03_16_23/03/16/00/C5GDASHL/FB2DCYZI.mp4/master.m3u8","audio":{"names":["LostFilm","HDRezka Studio","HDrezka Studio (18+)","TVShows","Eng.Original","DniproFilm (укр)","delete"],"order":[0,1,2,3,5,4,6]},"cc":[{"url":"https://hye1eaipby4w.deliveryv.ws/03_16_23/03/16/00/SD3T6NYG/2AVJIMYN.vtt","name":"Eng. SDH - 1"},{"url":"https://hye1eaipby4w.deliveryv.ws/03_16_23/03/16/00/35NWNS2Z/ZZNWF5AW.vtt","name":"Eng. full - 2"},{"url":"https://hye1eaipby4w.deliveryv.ws/03_16_23/03/16/00/H6I6VNIP/G6S6Q2XI.vtt","name":"Рус. полные - 3"},{"url":"https://hye1eaipby4w.deliveryv.ws/03_16_23/03/16/00/2ER7ENVA/3YZH4WVY.vtt","name":"Рус. форсированные - 4"}],"duration":2204,"title":"Мэр Кингстауна (2 сезон) - 9 серия","qbw":{"1280":720,"1920":1080,"864":480},"download":"","sections":[],"poster":"https://img.imgilall.me/movies/video/5/7/1/8/7/1/0/0/0/0/800x450_571871.jpg?t=1678952197","preview":{"src":"https://img.zcvh.net/955700/desktop/thumb-${spriteNum}.webp"}},{"episode":"10","id":577164,"videoKey":961763,"dash":"https://hye1eaipby4w.deliveryv.ws/04_23/09/14/KPA2FEQY/961763.mpd","hls":"https://hye1eaipby4w.deliveryv.ws/04_09_23/04/09/12/R2EXCNW3/SYDB5YQV.mp4/master.m3u8","audio":{"names":["HDRezka Studio","HDrezka Studio (18+)","LostFilm","TVShows","Eng.Original","DniproFilm (укр)","delete"],"order":[1,2,0,3,5,4,6]},"cc":[{"url":"https://hye1eaipby4w.deliveryv.ws/04_09_23/04/09/12/WLZUMXLJ/SFQAMXKH.vtt","name":"Eng. full - 1"},{"url":"https://hye1eaipby4w.deliveryv.ws/04_09_23/04/09/12/BQABS6Y7/VLPTC3EF.vtt","name":"Рус. полные - 2"},{"url":"https://hye1eaipby4w.deliveryv.ws/04_09_23/04/09/12/7VYQYRYH/FCMOJ226.vtt","name":"Рус. форсированные - 3"}],"duration":2779,"title":"Мэр Кингстауна (2 сезон) - 10 серия","download":"","sections":[],"poster":"https://img.imgilall.me/movies/video/5/7/7/1/6/4/0/0/0/0/800x450_577164.jpg?t=1681114162","preview":{"src":"https://img.zcvh.net/961763/desktop/thumb-${spriteNum}.webp"}}]},{"season":1,"blocked":false,"episodes":[{"episode":"1","id":453327,"videoKey":815018,"dash":"https://hye1eaipby4w.deliveryv.ws/11_21/18/18/45HO2AFV/815018.mpd","hls":"https://hye1eaipby4w.deliveryv.ws/11_18_21/11/18/15/NPSCFNJY/MTDSMK4K.mp4/master.m3u8","audio":{"names":["LostFilm","Eng.Original"],"order":[0,1]},"duration":3969,"title":"Мэр Кингстауна (1 сезон) - 1 серия","qbw":{"1280":720,"1920":1080,"864":480},"download":"","sections":[],"poster":"https://img.imgilall.me/movies/video/4/5/3/3/2/7/0/0/0/0/800x450_453327.jpg?t=1637252156","preview":{"src":"https://img.zcvh.net/815018/desktop/thumb-${spriteNum}.webp"}},{"episode":"2","id":454514,"videoKey":816711,"dash":"https://hye1eaipby4w.deliveryv.ws/11_21/22/04/HAELD2O5/816711.mpd","hls":"https://hye1eaipby4w.deliveryv.ws/11_22_21/11/22/00/F6EGO7TN/6OWDPXVR.mp4/master.m3u8","audio":{"names":["LostFilm","Eng.Original"],"order":[0,1]},"duration":3013,"title":"Мэр Кингстауна (1 сезон) - 2 серия","qbw":{"1280":720,"1920":1080,"864":480},"download":"","sections":[],"poster":"https://img.imgilall.me/movies/video/4/5/4/5/1/4/0/0/0/0/800x450_454514.jpg?t=1637549192","preview":{"src":"https://img.zcvh.net/816711/desktop/thumb-${spriteNum}.webp"}},{"episode":"3","id":456222,"videoKey":818133,"dash":"https://hye1eaipby4w.deliveryv.ws/11_21/24/18/4UCTPHSE/818133.mpd","hls":"https://hye1eaipby4w.deliveryv.ws/11_24_21/11/24/10/UQMI5PE7/6EWRTSEY.mp4/master.m3u8","audio":{"names":["LostFilm","Eng.Original"],"order":[0,1]},"duration":3298,"title":"Мэр Кингстауна (1 сезон) - 3 серия","qbw":{"1280":720,"1920":1080,"864":480},"download":"","sections":[],"poster":"https://img.imgilall.me/movies/video/4/5/6/2/2/2/0/0/0/0/800x450_456222.jpg?t=1637770437","preview":{"src":"https://img.zcvh.net/818133/desktop/thumb-${spriteNum}.webp"}},{"episode":"4","id":458887,"videoKey":820731,"dash":"https://hye1eaipby4w.deliveryv.ws/12_21/02/19/LGRKU5GD/820731.mpd","hls":"https://hye1eaipby4w.deliveryv.ws/12_02_21/12/02/13/DU6LR4F3/C3IJQEN4.mp4/master.m3u8","audio":{"names":["LostFilm","Eng.Original"],"order":[0,1]},"duration":2802,"title":"Мэр Кингстауна (1 сезон) - 4 серия","qbw":{"1280":720,"1920":1080,"864":480},"download":"","sections":[],"poster":"https://img.imgilall.me/movies/video/4/5/8/8/8/7/0/0/0/0/800x450_458887.jpg?t=1638466352","preview":{"src":"https://img.zcvh.net/820731/desktop/thumb-${spriteNum}.webp"}},{"episode":"5","id":461217,"videoKey":823424,"dash":"https://hye1eaipby4w.deliveryv.ws/12_21/09/00/M4B6273V/823424.mpd","hls":"https://hye1eaipby4w.deliveryv.ws/12_08_21/12/08/17/S7VEYXBY/5JOYW6SM.mp4/master.m3u8","audio":{"names":["LostFilm","Eng.Original"],"order":[0,1]},"cc":[{"url":"https://hye1eaipby4w.deliveryv.ws/12_08_21/12/08/13/NX2AZPYB/AXZ47GGV.vtt","name":"Eng. SDH - 1"}],"duration":2826,"title":"Мэр Кингстауна (1 сезон) - 5 серия","qbw":{"1280":720,"1920":1080,"864":480},"download":"","sections":[],"poster":"https://img.imgilall.me/movies/video/4/6/1/2/1/7/0/0/0/0/800x450_461217.jpg?t=1639001722","preview":{"src":"https://img.zcvh.net/823424/desktop/thumb-${spriteNum}.webp"}},{"episode":"6","id":463854,"videoKey":826692,"dash":"https://hye1eaipby4w.deliveryv.ws/12_21/15/22/BYRKRRRA/826692.mpd","hls":"https://hye1eaipby4w.deliveryv.ws/12_15_21/12/15/16/LSRAOJDG/XMU6KLGJ.mp4/master.m3u8","audio":{"names":["LostFilm","Eng.Original"],"order":[0,1]},"duration":3047,"title":"Мэр Кингстауна (1 сезон) - 6 серия","qbw":{"1280":720,"1920":1080,"864":480},"download":"","sections":[],"poster":"https://img.imgilall.me/movies/video/4/6/3/8/5/4/0/0/0/0/800x450_463854.jpg?t=1639600085","preview":{"src":"https://img.zcvh.net/826692/desktop/thumb-${spriteNum}.webp"}},{"episode":"7","id":465739,"videoKey":828729,"dash":"https://hye1eaipby4w.deliveryv.ws/12_21/22/21/CWDZNWND/828729.mpd","hls":"https://hye1eaipby4w.deliveryv.ws/12_22_21/12/22/16/JXRZFIJ7/NXCFNDG3.mp4/master.m3u8","audio":{"names":["LostFilm","Eng.Original"],"order":[0,1]},"duration":3424,"title":"Мэр Кингстауна (1 сезон) - 7 серия","qbw":{"1280":720,"1920":1080,"864":480},"download":"","sections":[],"poster":"https://img.imgilall.me/movies/video/4/6/5/7/3/9/0/0/0/0/800x450_465739.jpg?t=1640201687","preview":{"src":"https://img.zcvh.net/828729/desktop/thumb-${spriteNum}.webp"}},{"episode":"8","id":467381,"videoKey":830759,"dash":"https://hye1eaipby4w.deliveryv.ws/12_21/29/19/4TQRDXSH/830759.mpd","hls":"https://hye1eaipby4w.deliveryv.ws/12_29_21/12/29/10/2CNFGVJT/7TBIIEWI.mp4/master.m3u8","audio":{"names":["LostFilm","Eng.Original"],"order":[0,1]},"duration":3315,"title":"Мэр Кингстауна (1 сезон) - 8 серия","qbw":{"1280":720,"1920":1080,"864":480},"download":"","sections":[],"poster":"https://img.imgilall.me/movies/video/4/6/7/3/8/1/0/0/0/0/800x450_467381.jpg?t=1640797679","preview":{"src":"https://img.zcvh.net/830759/desktop/thumb-${spriteNum}.webp"}},{"episode":"9","id":469155,"videoKey":832567,"dash":"https://hye1eaipby4w.deliveryv.ws/01_22/05/17/HBF37VGT/832567.mpd","hls":"https://hye1eaipby4w.deliveryv.ws/01_05_22/01/05/13/6KGNYWET/CWYNV3UG.mp4/master.m3u8","audio":{"names":["LostFilm","Eng.Original"],"order":[0,1]},"duration":2829,"title":"Мэр Кингстауна (1 сезон) - 9 серия","qbw":{"1280":720,"1920":1080,"864":480},"download":"","sections":[],"poster":"https://img.imgilall.me/movies/video/4/6/9/1/5/5/0/0/0/0/800x450_469155.jpg?t=1641398357","preview":{"src":"https://img.zcvh.net/832567/desktop/thumb-${spriteNum}.webp"}},{"episode":"10","id":471637,"videoKey":836557,"dash":"https://hye1eaipby4w.deliveryv.ws/01_22/12/20/J52BJ6R7/836557.mpd","hls":"https://hye1eaipby4w.deliveryv.ws/01_12_22/01/12/14/T5CLTSVB/LQ3YXCOZ.mp4/master.m3u8","audio":{"names":["LostFilm","Eng.Original"],"order":[0,1]},"duration":3058,"title":"Мэр Кингстауна (1 сезон) - 10 серия","qbw":{"1280":720,"1920":1080,"864":480},"download":"","sections":[],"poster":"https://img.imgilall.me/movies/video/4/7/1/6/3/7/0/0/0/0/800x450_471637.jpg?t=1642013455","preview":{"src":"https://img.zcvh.net/836557/desktop/thumb-${spriteNum}.webp"}}]}]
+			},
+			qualityByWidth: {"1280":1080,"864":480},
+			p2p: {
+				geo: ["GE","","AS16010"],
+				tolerance:  4 ,
+				tracker: "wss://t7.zcvh.net/v1/ws",
+				longDownload: 30 * 1000
+			}
+		});
+
+		var videoKey = 1093822 ;
+
+		function onPlaylist(data) {
+			post({
+				event: 'changeEpisode',
+				id: data.id,
+				episode: data.episode,
+				season: data.season
+			});
+			id = data.id;
+			document.title = data.title;
+
+			try {
+				var franch = location.pathname.split('/').slice(-1)[0];
+				if (!/\d+/.test(franch)) return;
+				document.cookie = 'vp' + franch + '=' + data.season + ':' + data.episode +
+					';domain=.' + location.hostname.split('.').slice(1).join('.') +
+					';expires=' + new Date(Date.now() + 1000 * 60 * 60 * 24 * 365 * 10).toUTCString();
+			} catch (e) {
+			}
+			middleCount = 0;
+		}
+    </script>
+
+
+    </body>
+    </html>
