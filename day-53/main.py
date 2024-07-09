@@ -28,27 +28,29 @@ class Scraper:
 
     def get_html(self):
         self.driver.get("https://www.zara.com/ge/en/man-sale-l7139.html?v1=2439352")
-        time.sleep(3)
+        time.sleep(2)
+        # for i in range(5):
+        #     time.sleep(1)
+        #     self.driver.execute_script("window.scrollBy(0, document.body.scrollHeight);")
+        # time.sleep(3)
         self.html = self.driver.page_source
 
     def bs_scrape(self):
         self.soup = BeautifulSoup(self.html, "html.parser")
-        items_with_links = self.soup.find_all("a", class_= ["product-link", "_item"], href=True)
-        price_element = self.soup.find_all("span", class_="money-amount__main")
+        items_with_links = self.soup.find_all("a", class_= ["product-link", "_item"])
+        price_element = self.soup.find_all("span", class_="price-old__amount")
+
 
         for item in items_with_links:
             name = item.getText()
             link = item["href"]
-            if name == "":
-                link = ""
             self.items.append(name)
             self.links.append(link)
 
         for prices in price_element:
             self.prices.append(prices.getText())
 
-        for i in range(len(self.prices)):
-
-         print(self.items[i], self.links[i], self.prices[i])
+        for i in range(8):
+            print(self.items[i], self.links[i], self.prices[i])
 
 Scraper()
