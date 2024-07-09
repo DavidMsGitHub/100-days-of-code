@@ -19,7 +19,7 @@ class Scraper:
     def __init__(self):
         self.items = []
         self.links = []
-        self.prices = []
+        self.prices_list = []
         self.service = Service(driver_path)
         self.driver = webdriver.Chrome(service=self.service)
         self.get_html()
@@ -48,9 +48,10 @@ class Scraper:
             self.links.append(link)
 
         for prices in price_element:
-            self.prices.append(prices.getText())
+            self.prices_list.append(prices.getText())
+
 
         for i in range(8):
-            print(self.items[i], self.links[i], self.prices[i])
+            print(self.items[i], self.links[i], self.prices_list[i])
 
 Scraper()
